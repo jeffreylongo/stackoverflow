@@ -1,4 +1,5 @@
-﻿using System;
+﻿using redditTakeTwo.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,9 +9,11 @@ namespace redditTakeTwo.Controllers
 {
     public class HomeController : Controller
     {
+        public ApplicationDbContext Database = new ApplationDbContext();
+
         public ActionResult Index()
         {
-            return View();
+            return View(Database.Posts.ToList());
         }
 
         public ActionResult About()
