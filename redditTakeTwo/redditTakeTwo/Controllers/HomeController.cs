@@ -9,11 +9,11 @@ namespace redditTakeTwo.Controllers
 {
     public class HomeController : Controller
     {
-        public ApplicationDbContext Database = new ApplationDbContext();
+        public ApplicationDbContext db = new ApplationDbContext();
 
         public ActionResult Index()
         {
-            return View(Database.Posts.ToList());
+            return View(db.Posts.ToList());
         }
 
         public ActionResult About()
