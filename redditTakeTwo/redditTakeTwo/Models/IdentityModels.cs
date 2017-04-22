@@ -29,5 +29,8 @@ namespace redditTakeTwo.Models
         {
             return new ApplicationDbContext();
         }
+
+        public DbSet<RedditPost> Posts { get; set; }
+
     }
 }
