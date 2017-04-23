@@ -1,4 +1,6 @@
 ﻿@model IEnumerable<redditTakeTwo.Models.RedditPost>
+@using Microsoft.AspNet.Identity
+@using redditTakeTwo.Models
 
 @{
     ViewBag.Title = "Index";
@@ -8,21 +10,30 @@
 <p></p>
 <p>
 </p>
-
-
 <div class="panel panel-primary">
     <div class="panel panel-heading">
         @Html.ActionLink("Create New", "Create", "Posts", null, new { @class = "btn btn-default" })
     </div>
     @foreach (var item in Model)
     {
+
         <div class="panel panel-body">
             <div class="img-responsive col-md-1">
                 <img src="" height="50" width="50" />
             </div>
+            @if (HttpContext.Current.User.Identity.IsAuthenticated)
+            {
+                var db = new ApplicationDbContext();
+                if (item.UserId != null)
+                {
+
+                    var users = db.Users.First(f => f.Id == item.UserId);
+                    <h4>@users.UserName</h4>
+                }
+
+            }
             <div class="col-md-11">
                 <div class="col-md-5">
-                    <h6>@item.UserId</h6>
                     <h4>@item.Title</h4>
                     <h6>@item.Body</h6>
                 </div>
@@ -49,11 +60,11 @@
                         <span aria-hidden="true">&laquo;</span>
                     </a>
                 </li>
-                <li><a href="#">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
+                <li><a href="~/Home/Index?pageIndex=1">1</a></li>
+                <li><a href="~/Home/Index?pageIndex=2">2</a></li>
+                <li><a href="~/Home/Index?pageIndex=3">3</a></li>
+                <li><a href="~/Home/Index?pageIndex=4">4</a></li>
+                <li><a href="~/Home/Index?pageIndex=5">5</a></li>
                 <li>
                     <a href="#" aria-label="Next">
                         <span aria-hidden="true">&raquo;</span>

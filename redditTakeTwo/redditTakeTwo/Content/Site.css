@@ -36,3 +36,10 @@ textarea {
     color: black;
 }
 
+.navbar-inverse {
+    background-color: #428bca;
+}
+
+.navbar-fixed-top {
+    background-color: #428bca;
+}
