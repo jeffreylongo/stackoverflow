@@ -204,6 +204,10 @@
     <Compile Include="Migrations\201704221642530_firstie.Designer.cs">
       <DependentUpon>201704221642530_firstie.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201704222315556_jasdlfkj.cs" />
+    <Compile Include="Migrations\201704222315556_jasdlfkj.Designer.cs">
+      <DependentUpon>201704222315556_jasdlfkj.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -273,6 +277,7 @@
     <Content Include="Views\Posts\Create.cshtml" />
     <Content Include="Views\Posts\Edit.cshtml" />
     <Content Include="Views\Posts\Delete.cshtml" />
+    <Content Include="Views\Posts\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -298,6 +303,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201704221642530_firstie.resx">
       <DependentUpon>201704221642530_firstie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704222315556_jasdlfkj.resx">
+      <DependentUpon>201704222315556_jasdlfkj.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

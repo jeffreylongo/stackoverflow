@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace redditTakeTwo.Controllers
 {
@@ -50,7 +51,11 @@ namespace redditTakeTwo.Controllers
         {
             if (ModelState.IsValid)
             {
+
                 db.Posts.Add(post);
+                post.UpVotes = 1;
+                post.PostedAt = DateTime.Now;
+                post.UserId = User.ToString();
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
