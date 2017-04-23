@@ -1,4 +1,6 @@
 ﻿@model redditTakeTwo.Models.RedditPost
+    @using System.Security.Principal;
+@using Microsoft.AspNet.Identity;
 
 @{
     ViewBag.Title = "Create";
@@ -30,7 +32,8 @@
                 @Html.ValidationMessageFor(model => model.Body, "", new { @class = "text-danger" })
             </div>
         </div>
-
+        
+        
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
