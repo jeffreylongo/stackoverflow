@@ -16,8 +16,9 @@ namespace redditTakeTwo.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Posts
-        public ActionResult Index()
+        public ActionResult Index(int pageNum = 1)
         {
+            ViewBag.PageNum = pageNum;
             return View(db.Posts.ToList());
         }
 

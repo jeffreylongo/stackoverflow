@@ -19,7 +19,7 @@
 
         <div class="panel panel-body">
             <div class="img-responsive col-md-1">
-                <img src="" height="50" width="50" />
+                <img src="https://cdn.worldvectorlogo.com/logos/reddit-2.svg" height="50" width="50" />
             </div>
             @if (HttpContext.Current.User.Identity.IsAuthenticated)
             {
@@ -28,7 +28,7 @@
                 {
 
                     var users = db.Users.First(f => f.Id == item.UserId);
-                    <h4>@users.UserName</h4>
+                    <h6><strong>@users.UserName</strong></h6>
                 }
 
             }
@@ -60,11 +60,11 @@
                         <span aria-hidden="true">&laquo;</span>
                     </a>
                 </li>
-                <li><a href="~/Home/Index?pageIndex=1">1</a></li>
-                <li><a href="~/Home/Index?pageIndex=2">2</a></li>
-                <li><a href="~/Home/Index?pageIndex=3">3</a></li>
-                <li><a href="~/Home/Index?pageIndex=4">4</a></li>
-                <li><a href="~/Home/Index?pageIndex=5">5</a></li>
+                <li>@Html.ActionLink("1", "Index", new { pageNum = 1 })</li>
+                <li>@Html.ActionLink("2", "Index", new { pageNum = 2 })</li>
+                <li>@Html.ActionLink("3", "Index", new { pageNum = 3 })</li>
+                <li>@Html.ActionLink("4", "Index", new { pageNum = 4 })</li>
+
                 <li>
                     <a href="#" aria-label="Next">
                         <span aria-hidden="true">&raquo;</span>
