@@ -55,7 +55,8 @@ namespace redditTakeTwo.Controllers
             {
 
                 db.Posts.Add(post);
-                post.UpVotes = 1;
+                post.UpVotes = 2;
+                post.DownVotes = 1;
                 post.PostedAt = DateTime.Now;
                 post.UserId = User.Identity.GetUserId();
                 db.SaveChanges();
