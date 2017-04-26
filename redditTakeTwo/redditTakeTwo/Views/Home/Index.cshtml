@@ -30,60 +30,64 @@
 
         <div class="panel panel-body">
             <div class="img-responsive col-md-1">
-                <img src="https://cdn.worldvectorlogo.com/logos/reddit-2.svg" height="50" width="50" />
+                <!--<img src="https://cdn.worldvectorlogo.com/logos/reddit-2.svg" height="50" width="50" />-->
+                @if (item.Img == null)
+                {
+                    <img src="https://cdn.worldvectorlogo.com/logos/reddit-2.svg" height="60"/>
+                }
+                else
+                {
+                    <img src="@item.Img" height="60" />
+                }
             </div>
             @if (HttpContext.Current.User.Identity.IsAuthenticated)
             {
                 var db = new ApplicationDbContext();
                 if (item.UserId != null)
                 {
-
                     var users = db.Users.First(f => f.Id == item.UserId);
                     <h6><strong>@users.UserName</strong></h6>
                 }
-
             }
-                <div class="col-md-11">
-                    <div class="col-md-5">
-                        <h4>@item.Title</h4>
-                        <h6>@item.Body</h6>
-                    </div>
-                    <div class="col-md-3">
-                        <h6>@item.PostedAt</h6>
-                    </div>
-                    <div class="col-md-offset-8">
-                        <span class="badge">@item.UpVotes UpVotes</span>
-                        <span class="badge">@item.DownVotes DownVotes</span>
-                    </div>
-                    <div class="col-md-offset-11">
-                        <h6>@Html.ActionLink("Edit", "Edit", new { id = item.Id })</h6>
-                        <h6>@Html.ActionLink("Details", "Details", new { id = item.Id })</h6>
-                        <h6>@Html.ActionLink("Delete", "Delete", new { id = item.Id })</h6>
-                    </div>
+            <div class="col-md-11">
+                <div class="col-md-5">
+                    <h4>@item.Title</h4>
+                    <h6>@item.Body</h6>
+                </div>
+                <div class="col-md-3">
+                    <h6>@item.PostedAt</h6>
+                </div>
+                <div class="col-md-offset-8">
+                    <span class="badge">@item.UpVotes UpVotes</span>
+                    <span class="badge">@item.DownVotes DownVotes</span>
+                </div>
+                <div class="col-md-offset-11">
+                    <h6>@Html.ActionLink("Edit", "Edit", "Posts", null, new { id = item.Id })</h6>
+                    <h6>@Html.ActionLink("Details", "Details", "Posts", null, new { id = item.Id })</h6>
+                    <h6>@Html.ActionLink("Delete", "Delete", "Posts", null, new { id = item.Id })</h6>
                 </div>
             </div>
-            }
-            <div class="text-center">
-                <nav aria-label="Page navigation">
-                    <ul class="pagination">
-                        <li>
-                            <a href="#" aria-label="Previous">
-                                <span aria-hidden="true">&laquo;</span>
-                            </a>
-                        </li>
-                        <li>@Html.ActionLink("1", "Index", new { pageNum = 1 })</li>
-                        <li>@Html.ActionLink("2", "Index", new { pageNum = 2 })</li>
-                        <li>@Html.ActionLink("3", "Index", new { pageNum = 3 })</li>
-                        <li>@Html.ActionLink("4", "Index", new { pageNum = 4 })</li>
-
-                        <li>
-                            <a href="#" aria-label="Next">
-                                <span aria-hidden="true">&raquo;</span>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
         </div>
+    }
+    <div class="text-center">
+        <nav aria-label="Page navigation">
+            <ul class="pagination">
+                <li>
+                    <a href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                <li>@Html.ActionLink("1", "Index", new { pageNum = 1 })</li>
+                <li>@Html.ActionLink("2", "Index", new { pageNum = 2 })</li>
+                <li>@Html.ActionLink("3", "Index", new { pageNum = 3 })</li>
+                <li>@Html.ActionLink("4", "Index", new { pageNum = 4 })</li>
 
-
+                <li>
+                    <a href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>

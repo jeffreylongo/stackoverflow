@@ -15,12 +15,7 @@ namespace redditTakeTwo.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: Posts
-        public ActionResult Index(int pageNum = 1)
-        {
-            ViewBag.PageNum = pageNum;
-            return View(db.Posts.ToList());
-        }
+        
 
         // GET: Posts/Details/5
         public ActionResult Details(int? id)
@@ -49,18 +44,17 @@ namespace redditTakeTwo.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Title,Body,UpVotes,DownVotes,DatePosted,UserId")] RedditPost post)
+        public ActionResult Create([Bind(Include = "Id,Title,Img,Body,UpVotes,DownVotes,DatePosted,UserId")] RedditPost post)
         {
             if (ModelState.IsValid)
             {
-
                 db.Posts.Add(post);
-                post.UpVotes = 2;
-                post.DownVotes = 1;
+                post.UpVotes = 1;
+                post.DownVotes = 0;
                 post.PostedAt = DateTime.Now;
                 post.UserId = User.Identity.GetUserId();
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index","Home"); 
             }
 
             return View(post);
@@ -92,7 +86,7 @@ namespace redditTakeTwo.Controllers
             {
                 db.Entry(post).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index","Home");
             }
             return View(post);
         }
@@ -120,7 +114,7 @@ namespace redditTakeTwo.Controllers
             RedditPost post = db.Posts.Find(id);
             db.Posts.Remove(post);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "Home");
         }
 
         protected override void Dispose(bool disposing)

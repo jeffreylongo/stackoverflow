@@ -1,4 +1,4 @@
-﻿@model redditTakeTwo.Models.RedditPost
+﻿@model IEnumerable<redditTakeTwo.Models.RedditPost>
 
 @{
     ViewBag.Title = "Details";
@@ -6,61 +6,64 @@
 
 <h2>Details</h2>
 
-<div>
-    <h4>RedditPost</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Title)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Body)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Body)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.UpVotes)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.UpVotes)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.DownVotes)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.DownVotes)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.PostedAt)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.PostedAt)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.UserId)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.UserId)
-        </dd>
-
-    </dl>
-</div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Create New", "Create")
 </p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Img)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Body)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UpVotes)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DownVotes)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PostedAt)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserId)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Img)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Body)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UpVotes)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DownVotes)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PostedAt)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserId)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

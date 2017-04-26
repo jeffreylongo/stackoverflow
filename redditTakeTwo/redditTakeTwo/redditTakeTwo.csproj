@@ -207,17 +207,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201704221613262_InitialCreate.cs" />
-    <Compile Include="Migrations\201704221613262_InitialCreate.Designer.cs">
-      <DependentUpon>201704221613262_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\201704261923034_reset.cs" />
+    <Compile Include="Migrations\201704261923034_reset.Designer.cs">
+      <DependentUpon>201704261923034_reset.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201704221642530_firstie.cs" />
-    <Compile Include="Migrations\201704221642530_firstie.Designer.cs">
-      <DependentUpon>201704221642530_firstie.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201704222315556_jasdlfkj.cs" />
-    <Compile Include="Migrations\201704222315556_jasdlfkj.Designer.cs">
-      <DependentUpon>201704222315556_jasdlfkj.cs</DependentUpon>
+    <Compile Include="Migrations\201704261932363_imgtry2.cs" />
+    <Compile Include="Migrations\201704261932363_imgtry2.Designer.cs">
+      <DependentUpon>201704261932363_imgtry2.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -289,9 +285,8 @@
     <Content Include="Views\Posts\Create.cshtml" />
     <Content Include="Views\Posts\Edit.cshtml" />
     <Content Include="Views\Posts\Delete.cshtml" />
-    <Content Include="Views\Posts\Index.cshtml" />
-    <Content Include="Views\Posts\Details.cshtml" />
     <Content Include="Views\Shared\_voteDisplay.cshtml" />
+    <Content Include="Views\Posts\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -313,14 +308,11 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201704221613262_InitialCreate.resx">
-      <DependentUpon>201704221613262_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201704261923034_reset.resx">
+      <DependentUpon>201704261923034_reset.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201704221642530_firstie.resx">
-      <DependentUpon>201704221642530_firstie.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201704222315556_jasdlfkj.resx">
-      <DependentUpon>201704222315556_jasdlfkj.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201704261932363_imgtry2.resx">
+      <DependentUpon>201704261932363_imgtry2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

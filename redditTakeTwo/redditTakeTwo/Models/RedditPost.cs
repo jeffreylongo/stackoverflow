@@ -9,9 +9,10 @@ namespace redditTakeTwo.Models
     {
         public int Id { get; set; }
         public string Title { get; set; }
+        public string Img { get; set; } 
         public string Body { get; set; }
-        public int? UpVotes { get; set; } = 2;
-        public int? DownVotes { get; set; } = 1;
+        public int? UpVotes { get; set; }
+        public int? DownVotes { get; set; } 
         public DateTime PostedAt { get; set; }
 
         public string UserId { get; set; }
