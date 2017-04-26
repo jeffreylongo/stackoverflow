@@ -16,6 +16,23 @@
     </div>
     @foreach (var item in Model)
     {
+        <div class="row">
+            <div class="col-md-2" id="voteContainer-@item.Id">
+                @Html.Partial("_voteDisplay", item)
+            </div>
+            <div class="col-md-10">
+                <div class="media">
+                    <div class="media-left">
+                        <a href="#">
+                            <img class="media-object" src="..." alt="...">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">@item.Title</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <div class="panel panel-body">
             <div class="img-responsive col-md-1">
