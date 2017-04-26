@@ -9,7 +9,7 @@ using System.Web.Mvc;
 
 namespace redditTakeTwo.Controllers
 {
-    public class VoteController : ApiController
+    public class VoteController : Controller
     {
         // GET: Vote
         public ActionResult Up(int id)

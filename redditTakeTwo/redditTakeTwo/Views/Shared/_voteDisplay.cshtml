@@ -1,14 +1,11 @@
-﻿@model IEnumerable<redditTakeTwo.Models.RedditPost>
-@using Microsoft.AspNet.Identity
-@using redditTakeTwo.Models
+﻿@model redditTakeTwo.Models.RedditPost
 
-
-<button btn="btn btn-link" onclick="upVote(@item.Id);">
+<button btn="btn btn-link" onclick="upVote(@Model.Id);">
     <i class="glyphicon glyphicon-arrow-up"></i>
 </button>
 
-<span>@(item.UpVotes - item.DownVotes)</span>
+<span>@(Model.UpVotes - Model.DownVotes)</span>
 
-<button btn="btn btn-link" onclick="downVote(@item.Id);">
+<button btn="btn btn-link" onclick="downVote(@Model.Id);">
     <i class="glyphicon glyphicon-arrow-down"></i>
 </button>
