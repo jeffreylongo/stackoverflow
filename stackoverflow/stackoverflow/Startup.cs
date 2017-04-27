@@ -1,8 +1,8 @@
 ﻿using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartupAttribute(typeof(redditTakeTwo.Startup))]
-namespace redditTakeTwo
+[assembly: OwinStartupAttribute(typeof(stackoverflow.Startup))]
+namespace stackoverflow
 {
     public partial class Startup
     {
