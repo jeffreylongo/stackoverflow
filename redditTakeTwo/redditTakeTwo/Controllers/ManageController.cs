@@ -6,9 +6,9 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using redditTakeTwo.Models;
+using stackoverflow.Models;
 
-namespace redditTakeTwo.Controllers
+namespace stackoverflow.Controllers
 {
     [Authorize]
     public class ManageController : Controller

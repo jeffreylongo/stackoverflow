@@ -1,4 +1,4 @@
-﻿using redditTakeTwo.Models;
+﻿using stackoverflow.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -9,7 +9,7 @@ using System.Web.Mvc;
 using System.Web.Security;
 using Microsoft.AspNet.Identity;
 
-namespace redditTakeTwo.Controllers
+namespace stackoverflow.Controllers
 {
     public class PostsController : Controller
     {

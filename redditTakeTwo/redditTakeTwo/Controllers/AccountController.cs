@@ -10,7 +10,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using redditTakeTwo.Models;
 
-namespace redditTakeTwo.Controllers
+namespace stackoverflow.Controllers
 {
     [Authorize]
     public class AccountController : Controller
