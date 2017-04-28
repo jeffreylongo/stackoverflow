@@ -215,6 +215,14 @@
     <Compile Include="Migrations\201704261932363_imgtry2.Designer.cs">
       <DependentUpon>201704261932363_imgtry2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201704281848187_userRoleDefined.cs" />
+    <Compile Include="Migrations\201704281848187_userRoleDefined.Designer.cs">
+      <DependentUpon>201704281848187_userRoleDefined.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704281901067_config.cs" />
+    <Compile Include="Migrations\201704281901067_config.Designer.cs">
+      <DependentUpon>201704281901067_config.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -313,6 +321,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201704261932363_imgtry2.resx">
       <DependentUpon>201704261932363_imgtry2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704281848187_userRoleDefined.resx">
+      <DependentUpon>201704281848187_userRoleDefined.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704281901067_config.resx">
+      <DependentUpon>201704281901067_config.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
