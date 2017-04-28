@@ -1,6 +1,6 @@
-﻿using redditTakeTwo.Models;
+﻿using stackoverflow.Models;
 
-namespace redditTakeTwo.Controllers
+namespace stackoverflow.Controllers
 {
     public class ApplationDbContext : ApplicationDbContext
     {

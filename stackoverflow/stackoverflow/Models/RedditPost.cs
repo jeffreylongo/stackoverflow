@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace redditTakeTwo.Models
+namespace stackoverflow.Models
 {
     public class RedditPost
     {
